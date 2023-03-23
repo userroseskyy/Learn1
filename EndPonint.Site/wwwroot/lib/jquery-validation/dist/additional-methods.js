@@ -491,7 +491,7 @@ $.validator.addMethod( "dateFA", function( value, element ) {
  *
  * @name $.validator.methods.dateITA
  * @type Boolean
- * @cat Plugins/Validate/Methods
+ * @cat ~/admintemplate/plugins/Validate/Methods
  */
 $.validator.addMethod( "dateITA", function( value, element ) {
 	var check = false,
@@ -518,7 +518,7 @@ $.validator.addMethod( "dateNL", function( value, element ) {
 	return this.optional( element ) || /^(0?[1-9]|[12]\d|3[01])[\.\/\-](0?[1-9]|1[012])[\.\/\-]([12]\d)?(\d\d)$/.test( value );
 }, $.validator.messages.date );
 
-// Older "accept" file extension method. Old docs: http://docs.jquery.com/Plugins/Validation/Methods/accept
+// Older "accept" file extension method. Old docs: http://docs.jquery.com/~/admintemplate/plugins/Validation/Methods/accept
 $.validator.addMethod( "extension", function( value, element, param ) {
 	param = typeof param === "string" ? param.replace( /,/g, "|" ) : "png|jpe?g|gif";
 	return this.optional( element ) || value.match( new RegExp( "\\.(" + param + ")$", "i" ) );
@@ -823,7 +823,7 @@ $.validator.addMethod( "nowhitespace", function( value, element ) {
 *
 * @name $.validator.methods.pattern
 * @type Boolean
-* @cat Plugins/Validate/Methods
+* @cat ~/admintemplate/plugins/Validate/Methods
 */
 $.validator.addMethod( "pattern", function( value, element, param ) {
 	if ( this.optional( element ) ) {
@@ -917,7 +917,7 @@ $.validator.addMethod( "postalcodeBR", function( cep_value, element ) {
  *
  * @name jQuery.validator.methods.postalCodeCA
  * @type Boolean
- * @cat Plugins/Validate/Methods
+ * @cat ~/admintemplate/plugins/Validate/Methods
  */
 $.validator.addMethod( "postalCodeCA", function( value, element ) {
 	return this.optional( element ) || /^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ] *\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i.test( value );
@@ -1102,7 +1102,7 @@ $.validator.addMethod( "url2", function( value, element ) {
  *
  * @name $.validator.methods.vinUS
  * @type Boolean
- * @cat Plugins/Validate/Methods
+ * @cat ~/admintemplate/plugins/Validate/Methods
  */
 $.validator.addMethod( "vinUS", function( v ) {
 	if ( v.length !== 17 ) {
