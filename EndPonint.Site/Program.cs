@@ -1,7 +1,17 @@
-var builder = WebApplication.CreateBuilder(args);
+using Learn1.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("LocalConnection");
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<DatabaseContext>(options =>
+{
+    options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
+    options.EnableDetailedErrors();
+});
 
 var app = builder.Build();
 
