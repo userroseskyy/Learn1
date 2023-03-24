@@ -1,49 +1,477 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<!doctype html>
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - EndPonint.Site</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/EndPonint.Site.styles.css" asp-append-version="true" />
+    <meta charset="utf-8">
+   
+    <title>فروشگاه اینترنتی موبایل و کامپیوتر زنجان</title>
+    <!--START-----------------------main-->
+    <script src="~/sitetamplate/script/jquery-1.11.1.min.js"></script>
+    <script src="~/sitetamplate/script/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/sitetamplate/style/style.css">
+    <!--END-------------------------main-->
+    <!--START-----------------------listproduct-->
+    <script src="~/sitetamplate/script/listproduct/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/sitetamplate/style/listproduct/styles.css">
+    <!--END-------------------------listproduct-->
+    <!--START-----------------------font-awesome.min-->
+    <link rel="stylesheet" type="text/css" href="~/sitetamplate/font/font-awesome-4.3.0/font-awesome-4.3.0/css/font-awesome.min.css">
+    <!--END-------------------------font-awesome.min-->
+    <!--START-----------------------slider-->
+    <script src="~/sitetamplate/script/slider/ddsmoothmenu.js"></script>
+    <script src="~/sitetamplate/script/slider/jquery.flexslider.js"></script>
+    <script src="~/sitetamplate/script/slider/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/sitetamplate/style/slider/home_flexslider.css">
+    <link rel="stylesheet" type="text/css" href="~/sitetamplate/style/slider/style.css">
+    <!--END-------------------------slider-->
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EndPonint.Site</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+    <div class="main">
+        <div class="main_top">
+            <div class="main_top_top_right">
+                <div class="main_top_top_right_top">
+                    <p><i class="fa fa-sign-in" style="float:right; font-size:20px; margin-left:10px; margin-top:-0.4%; "></i><a target="_blank" href="login.html">سلام , به حساب کاربری خود وارد شوید</a></p>
+                    <p><i class="fa fa-user-plus" style="float:right; font-size:18px; margin-left:10px; margin-top:-0.7%; "></i> <a target="_blank" href="registration.html"> ثبت نام کنید </a></p>
+                </div>
+                <!--main_top_top_right_top-->
+                <div class="main_top_top_right_bottom">
+                    <a href="cart.php">
+                        <div class="cart_box">
+                            <div class="cart_box_icon"> <i class="fa fa-cart-arrow-down"></i> </div>
+                            <!--cart_box_icon-->
+                            <div class="cart_box_name">
+                                <li><a href="cart_factor.html"> <p> سبد خرید </p>
+                            </div>
+                            <!--cart_box_name-->
+                            <div class="cart_factor">
+                                <p>0</p>
+                            </div>
+                            <!--cart_box_count-->
+                        </div>
+                    </a>
+                    <!--cart_box-->
+                    <input type="text" class="search_box" placeholder="محصول ، دسته یا برند مورد نظرتان را جستجو کنید ...">
+                    <div class="icon"> <i class="fa fa-search"></i> </div>
+                    <!--icon-->
+                </div>
+                <!--main_top_top_right_bottom-->
+            </div>
+            <!--main_top_top_right-->
+            <div class="main_top_top_left">
+                <a href="index.html"><div class="logo"> </div></a>
+                <!--logo-->
+            </div>
+            <!--main_top_top_left-->
+            <div class="main_top_bottom">
+                <ul>
+                    <li>
+                        <i class="fa fa-angle-down" style="font-size:17px; margin-right:13px"></i> انواع موبایل
+                        <ul>
+                            <li> اپل </li>
+                            <li>  سامسونگ </li>
+                            <li> سونی </li>
+                            <li> الجی </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-down" style="font-size:17px; margin-right:13px"></i> لپ  تاب
+                        <ul>
+                            <li>سونی</li>
+                            <li>hp</li>
+                            <li>ایسوس</li>
+                            <li>اپل</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-down" style="font-size:17px; margin-right:13px"></i> تبلت
+                        <ul>
+                            <li>ایپد</li>
+                            <li>گلگسی تب</li>
+                            <li>هوآوی</li>
+                            <li>فبلت</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-down" style="font-size:17px; margin-right:13px"></i> قطعات کامپیوتر
+                        <ul>
+                            <li>رم</li>
+                            <li>گرافیک</li>
+                            <li>مادربرد</li>
+                            <li>پاور</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-down" style="font-size:17px; margin-right:13px"></i> قطعات جانبی
+                        <ul>
+                            <li> فلش </li>
+                            <li> هارد اکسترنال</li>
+                            <li> کابل </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--main_top_bottom-->
+        </div>
+        <!--main_top-->  <div class="main_content">
+            <div class="main_content_right">
+                <div class="right_menu">
+                    <div class="right_menu_top">
+                        <h3> جدیدترین محصولات</h3>
+                    </div>
+                    <!--right_menu_top-->
+                    <div class="right_menu_content">
+                        <ul>
+                            <li>
+                                <div class="right"><img src="~/sitetamplate/image/eca008d4-05eb-49e3-a17b-6e91e8edaeff.jpg"></div>
+                                <div class="left">
+                                    <p>گلکسی A7</p>
+                                    <p style="color:#A7A0A0; font-size:16px;"> بازدید : 9032</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="right"><img src="~/sitetamplate/image/Sony_Xperia_Z5_Review.jpg"></div>
+                                <div class="left">
+                                    <p>سونی Z5 compact</p>
+                                    <p style="color:#A7A0A0; font-size:16px;"> بازدید : 9032</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="right"><img src="~/sitetamplate/image/Sony_Xperia_C5_Ultra_Review.jpg"></div>
+                                <div class="left">
+                                    <p>سونی C5 الترا</p>
+                                    <p style="color:#A7A0A0; font-size:16px;"> بازدید : 9032</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    @RenderBody()
+                    <!--right_menu_content-->
+                    <div class="right_menu_bottom"> <a href=""> + مشاهده محصولات بیشتر</a> </div>
+                </div>
+                <!--right_menu-->
+                <div class="view_box"><img src="~/sitetamplate/image/885e2c80.jpg"></div>
+                <div class="view_box"><img src="~/sitetamplate/image/bb693031-a89b-4190-8d2e-980ae16a2860.jpg"></div>
+                <div class="right_menu">
+                    <div class="right_menu_top">
+                        <h3> تازه ترین خبرها</h3>
+                    </div>
+                    <!--right_menu_top-->
+                    <div class="right_menu_content">
+                        <ul>
+                            <li>
+                                <div class="right"><img src="~/sitetamplate/image/eca008d4-05eb-49e3-a17b-6e91e8edaeff.jpg"></div>
+                                <div class="left">
+                                    <p>بررسی گلکسی A7</p>
+                                    <p style="color:#A7A0A0; font-size:16px;"> بازدید : 9032</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="right"><img src="~/sitetamplate/image/Mobile-Phone-Apple-iPhone-6s-64GB9b1ca1.jpg"></div>
+                                <div class="left">
+                                    <p>نقد و بررسی ایفون6s</p>
+                                    <p style="color:#A7A0A0; font-size:16px;"> بازدید : 9032</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="right"><img src="~/sitetamplate/image/Mobile-Phone-Apple-iPhone-6-128GBbf23a9.jpg"></div>
+                                <div class="left">
+                                    <p>آیفون با حافظه ی 128گیگ</p>
+                                    <p style="color:#A7A0A0; font-size:16px;"> بازدید : 9032</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="right"><img src="~/sitetamplate/image/Notebook-HP-Spectre-X360-13t-4185nr52cfcd.jpg"></div>
+                                <div class="left">
+                                    <p> غول HP در راه است</p>
+                                    <p style="color:#A7A0A0; font-size:16px;"> بازدید : 9032</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="right"><img src="~/sitetamplate/image/Notebook-HP-Pavilion-15-ab236neeae445.jpg"></div>
+                                <div class="left">
+                                    <p>سری جدید پاویلون از hp</p>
+                                    <p style="color:#A7A0A0; font-size:16px;"> بازدید : 9032</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="right"><img src="~/sitetamplate/image/Sony_Xperia_C5_Ultra_Review.jpg"></div>
+                                <div class="left">
+                                    <p>فبلت سونی با نام C5 الترا</p>
+                                    <p style="color:#A7A0A0; font-size:16px;"> بازدید : 9032</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--right_menu_content-->
+                    <div class="right_menu_bottom"> <a href=""> + مشاهده اخبار بیشتر</a> </div>
+                    <!--right_menu_bottom-->
+                </div>
+                <!--right_menu-->
+                <div class="view_banl_logo"><img src="~/sitetamplate/image/namad2.png"></div>
+            </div>
+            <div class="main_content_left">
+                <div class="main_content_left_slider">
+                    <section class="banner-wrapper">
+                        <div class="banner-block container">
+                            <div class="flexslider">
+                                <ul class="slides">
+                                    <li><img title="Banner" alt="Banner" src="~/sitetamplate/image/2806fed2-dc12-495e-845a-6c5b733ee2ce.jpg" /></li>
+                                    <li><img title="Banner" alt="Banner" src="~/sitetamplate/image/b55b44b4-d3b5-46ba-817e-3c285d9cec09.jpg" /></li>
+                                    <li><img title="Banner" alt="Banner" src="~/sitetamplate/image/15a1803e-aa5a-415a-a10a-6465e0474e86.jpg" /></li>
+                                    <li><img title="Banner" alt="Banner" src="~/sitetamplate/image/7e85f049-39be-439b-8895-c0cfb7247c86.jpg" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!--main_content_left_slider-->
+                <div class="main_content_left_box_info">
+                    <ul>
+                        <li>
+                            <img src="~/sitetamplate/image/ico-usp-1.png">
+                            <p> 7 روز ضمانت برگشت</p>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li>
+                            <img src="~/sitetamplate/image/ico-usp-2.png">
+                            <p>پرداخت در محل</p>
+                        </li>
+                        <li>
+                            <img src="~/sitetamplate/image/ico-usp-3.png">
+                            <p> ضمانت اصل بودن</p>
+                        </li>
+                        <li>
+                            <img src="~/sitetamplate/image/ico-usp-4.png">
+                            <p> تحویل اکسپرس</p>
+                        </li>
+                        <li>
+                            <img src="~/sitetamplate/image/ico-usp-5.png">
+                            <p>تضمین بهترین قیمت</p>
                         </li>
                     </ul>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+                <!--main_content_left_box_info-->
+                <div class="main_content_left_listproduct">
+                    <div class="top">
+                        <h3> محبوب ترین کالاها</h3>
+                        <li><a href="view_page.html">  <h4> لیست کامل +</h4>
+                    </div>
+                    <div class="content_listproduct">
+                        <div class="wrap">
+                            <div class="chain-box" id="chain-box-2">
+                                <ul class="chain">
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/Mobile-Phone-Samsung-Galaxy-A7-201602c3f4.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">گلکسی A7</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-3-col.php"><img src="~/sitetamplate/image/Mobile-Phone-LG-G506b1a5.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-3-col.php" class="title">LG G5</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-1-col.php"><img src="~/sitetamplate/image/Notebook-HP-Pavilion-15-ab236neeae445.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-1-col.php" class="title">نوت بوک اچ پی </a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/Mobile-Samsung-Galaxy-S3-I9300I-Dual-SIM0102e8.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">گلکسی s3</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-3-col.php"><img src="~/sitetamplate/image/Computer-Net-D-Link-DSL-2750U-New9210c5.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-3-col.php" class="title">مودم سفید</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/Computer-Net-D-Link-DSL-2740U-ADSL2-Plus-Modem-with-Wireless.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">مودم سیاه</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-1-col.php"><img src="~/sitetamplate/image/Computer-External-HDD-Western-Digital-My-Passport-Ultra-Prem.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-1-col.php" class="title">هارد اکسترنال</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/Mobile-Samsung-Galaxy-Star-Plus-S7262-Dual-SIM3eccab.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">سامسونگ</a>
+                                        <!--title-->
+                                    </li>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 1402 - EndPonint.Site - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                </ul>
+                                <a href="#" class="arrow3-left"></a><!--arrow3-left-->
+                                <a href="#" class="arrow3-right"></a><!--arrow3-right-->
+                            </div>
+                            <!--chain-box-->
+                        </div>
+                        <!--content-->
+                    </div>
+                    <!--main_content_left_listproduct-->
+                </div>
+                <div class="main_content_left_listproduct">
+                    <div class="top">
+                        <h3> پرفروش ترین کالاها</h3>
+                        <li><a href="view_page.html">    <h4> لیست کامل +</h4>
+                    </div>
+                    <div class="content_listproduct">
+                        <div class="wrap1">
+                            <div class="chain-box1s" id="chain-box-21s">
+                                <ul class="chain1s">
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/Phone-Panasonic-KX-TG3611BXf66ccc.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">گوشی پاناسونیک</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-3-col.php"><img src="~/sitetamplate/image/Mobile-Samsung-Galaxy-Star-Plus-S7262-Dual-SIM3eccab.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-3-col.php" class="title">گلکسی استار</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-1-col.php"><img src="~/sitetamplate/image/Computer-HDD-Silicon-Armor-A80-1TB030b68.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-1-col.php" class="title">هارد اکسترنال</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/Computer-HDD-WD-Elements-Portable-1TBa1558e.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">هارد اکسترنال WD</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-3-col.php"><img src="~/sitetamplate/image/Mobile-Phone-Apple-iPhone-6s-64GB9b1ca1.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-3-col.php" class="title">آیفون 6</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/eca008d4-05eb-49e3-a17b-6e91e8edaeff.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">گلکسی A7</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-1-col.php"><img src="~/sitetamplate/image/Mobile-Phone-LG-G506b1a5.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-1-col.php" class="title">LG G5</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/Computer-Net-D-Link-DSL-2740U-ADSL2-Plus-Modem-with-Wireless.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">مودم دی لینک</a>
+                                        <!--title-->
+                                    </li>
+                                </ul>
+                                <a href="#" class="arrow3-left1s"></a><!--arrow3-left-->
+                                <a href="#" class="arrow3-right1s"></a><!--arrow3-right-->
+                            </div>
+                            <!--chain-box-->
+                        </div>
+                        <!--content-->
+                    </div>
+                    <!--main_content_left_listproduct-->
+                </div>
+                <div class="main_content_left_listproduct">
+                    <div class="top">
+                        <h3> جدید ترین کالاها</h3>
+                        <li><a href="view_page.html">          <h4> لیست کامل +</h4>
+                    </div>
+                    <div class="content_listproduct">
+                        <div class="wrap2">
+                            <div class="chain-box2s" id="chain-box-22s">
+                                <ul class="chain2s">
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/Phone-Panasonic-KX-TG3611BXf66ccc.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">گوشی پاناسونیک</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-3-col.php"><img src="~/sitetamplate/image/Mobile-Samsung-Galaxy-S3-I9300I-Dual-SIM0102e8.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-3-col.php" class="title">گلکسی اس 3</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-1-col.php"><img src="~/sitetamplate/image/Mobile-Phone-LG-G506b1a5.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-1-col.php" class="title">LG G5</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/Mobile-LG-L70-Dual-D325d3ffd2.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">LG L70</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-3-col.php"><img src="~/sitetamplate/image/Notebook-HP-Pavilion-15-ab236neeae445.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-3-col.php" class="title">اچ پی پاویلون</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/Notebook-HP-Spectre-X360-13t-4185nr52cfcd.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">اچ پی Spectre-X360</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-1-col.php"><img src="~/sitetamplate/image/Notebook-Lenovo-E5080-A04c9ac.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-1-col.php" class="title">نوت بوک لنوو</a>
+                                        <!--title-->
+                                    </li>
+                                    <li>
+                                        <div class="image"><a href="portfolio-2-col.php"><img src="~/sitetamplate/image/Notebook-ASUS-UX303UB-Cafd9fc.jpg" alt="" /></a></div>
+                                        <!--image-->
+                                        <a href="portfolio-2-col.php" class="title">نوت بوک ایسوس</a>
+                                        <!--title-->
+                                    </li>
+                                </ul>
+                                <a href="#" class="arrow3-left2s"></a><!--arrow3-left-->
+                                <a href="#" class="arrow3-right2s"></a><!--arrow3-right-->
+                            </div>
+                            <!--chain-box-->
+                        </div>
+                        <!--content-->
+                    </div>
+                    <!--main_content_left_listproduct-->
+                </div>
+
+                <!--main_content_left-->
+            </div>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+        <!--main_content-->
+        <div class="main_bottom">
+            <div class="top">
+                <ul>
+                    <li><a href="index.html"> صفحه اصلی</a></li>
+                    <li><a href="user_panel.html"> پنل کاربری</a></li>
+                    <li><a href="login.html"> ورود </a></li>
+                    <li><a href="registration.html"> ثبت نام </a></li>
+                    <li><a href="cart.html"> سبد خرید </a></li>
+                </ul>
+            </div><!--top-->
+            <div class="bottom">
+                <div class="right"><p>طراحی شده توسط خانوم تاجیک (رشته ی مهندسی فناوری اطلاعات و ارتباطات موسسه روزبه)</p></div>
+            </div>
+        </div><!--main_bottom-->
+    </div>
+    <!--main-->
+
 </body>
 </html>
