@@ -2,6 +2,6 @@
 {
     public interface IGetUsersServices
     {
-        List<GetUsersDto> Execute(RequestGetUserDto request);
+        ResultGetUsersDto Execute(RequestGetUserDto request);
     }
 }

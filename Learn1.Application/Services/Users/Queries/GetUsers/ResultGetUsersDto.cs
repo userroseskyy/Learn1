@@ -4,7 +4,7 @@
     {
         public List<GetUsersDto> Users { get; set; }
 
-        public int Id { get; set; }
+        public int Rows { get; set; }
 
     }
 }

@@ -11,7 +11,7 @@ namespace Learn1.Application.Services.Users.Queries.GetUsers
             _context = context;
 
         }
-        public List<GetUsersDto> Execute(RequestGetUserDto request)
+        public ResultGetUsersDto Execute(RequestGetUserDto request)
         {
             var users = _context.Users.AsQueryable();
             if (!string.IsNullOrWhiteSpace(request.Searchkey))
@@ -19,12 +19,18 @@ namespace Learn1.Application.Services.Users.Queries.GetUsers
                 users=users.Where(p => p.FullName.Contains(request.Searchkey)&&p.Email.Contains(request.Searchkey));
             }
             int rowsCount = 0;
-            return users.ToPaged(request.Page, 20,out rowsCount).Select(p => new GetUsersDto
+            var usersList= users.ToPaged(request.Page, 20,out rowsCount).Select(p => new GetUsersDto
             {
                 Email = p.Email,
                 FullName = p.FullName,
                 Id = p.Id,
             }).ToList();
+            return new ResultGetUsersDto
+            {
+                Rows=rowsCount,
+                Users=usersList,
+            };
+
         }
     }
 }

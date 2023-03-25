@@ -1,3 +1,5 @@
+using Learn1.Application.InterFaces.Context;
+using Learn1.Application.Services.Users.Queries.GetUsers;
 using Learn1.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -6,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("LocalConnection");
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
+
+builder.Services.AddScoped<IGetUsersServices, GetUsersService>();
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
 {
