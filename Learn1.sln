@@ -17,17 +17,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{109455FE-A650-49B2-99A5-61D32A33ECB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn1.Domain", "Learn1.Domain\Learn1.Domain.csproj", "{649B5792-0D65-4639-AB77-A99F9391C213}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn1.Domain", "Learn1.Domain\Learn1.Domain.csproj", "{649B5792-0D65-4639-AB77-A99F9391C213}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn1.Application", "Learn1.Application\Learn1.Application.csproj", "{FCFD0587-96F6-471A-BBA9-DEC4FDDC317B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn1.Application", "Learn1.Application\Learn1.Application.csproj", "{FCFD0587-96F6-471A-BBA9-DEC4FDDC317B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn1.Infrastructure", "Learn1.Infrastructure\Learn1.Infrastructure.csproj", "{632EDAD7-1643-4E84-B270-081272146577}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn1.Infrastructure", "Learn1.Infrastructure\Learn1.Infrastructure.csproj", "{632EDAD7-1643-4E84-B270-081272146577}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn1.Persistence", "Learn1.Persistence\Learn1.Persistence.csproj", "{F324F1AB-4E84-4DEF-8001-5ECAFBC81B3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn1.Persistence", "Learn1.Persistence\Learn1.Persistence.csproj", "{F324F1AB-4E84-4DEF-8001-5ECAFBC81B3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn1.Common", "Learn1.Common\Learn1.Common.csproj", "{519DF75D-C856-4C67-BB2F-AAEAE56149D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn1.Common", "Learn1.Common\Learn1.Common.csproj", "{519DF75D-C856-4C67-BB2F-AAEAE56149D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndPonint.Site", "EndPonint.Site\EndPonint.Site.csproj", "{647E54E2-CE51-4FA6-93A4-FEFFE1148194}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndPonint.Site", "EndPonint.Site\EndPonint.Site.csproj", "{647E54E2-CE51-4FA6-93A4-FEFFE1148194}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
