@@ -1,6 +1,7 @@
 ﻿using Learn1.Application.InterFaces.Context;
 using Learn1.Application.Services.Users.Queries.GetUsers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EndPonint.Site.Areas.Admin.Controllers
 {  
@@ -8,10 +9,12 @@ namespace EndPonint.Site.Areas.Admin.Controllers
     public class UsersController : Controller
     {
         private readonly IGetUsersServices _getUsersServices;
+        private readonly IGetRolesService _getRolesServices;
         
-        public UsersController(IGetUsersServices getUsersServices)
+        public UsersController(IGetUsersServices getUsersServices, IGetRolesService getRolesServices)
         {
             _getUsersServices = getUsersServices;
+            _getRolesServices= getRolesServices;
         }
 
      
@@ -26,6 +29,7 @@ namespace EndPonint.Site.Areas.Admin.Controllers
         [HttpGet]
             public IActionResult Creat()
         {
+            ViewBag.Roles=new SelectList(_getRolesServices.Execute().Data, "Id" ,"Name");
             return View();
         }
     }
