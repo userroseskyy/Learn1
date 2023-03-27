@@ -1,4 +1,5 @@
 using Learn1.Application.InterFaces.Context;
+using Learn1.Application.Services.Users.Commands.RegesterUser;
 using Learn1.Application.Services.Users.Queries.GetUsers;
 using Learn1.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
 
 builder.Services.AddScoped<IGetUsersServices, GetUsersService>();
+builder.Services.AddScoped<IGetRolesService, GetRolesService>();
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
 {
