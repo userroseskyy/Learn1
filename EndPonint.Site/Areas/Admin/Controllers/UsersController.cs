@@ -8,6 +8,7 @@ namespace EndPonint.Site.Areas.Admin.Controllers
     public class UsersController : Controller
     {
         private readonly IGetUsersServices _getUsersServices;
+        
         public UsersController(IGetUsersServices getUsersServices)
         {
             _getUsersServices = getUsersServices;
