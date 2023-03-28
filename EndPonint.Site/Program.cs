@@ -13,6 +13,8 @@ builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
 
 builder.Services.AddScoped<IGetUsersServices, GetUsersService>();
 builder.Services.AddScoped<IGetRolesService, GetRolesService>();
+builder.Services.AddScoped<IRegesterUserService, RegesterUserServic>();
+
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
 {
