@@ -20,8 +20,8 @@ namespace Learn1.Application.Services.Users.Queries.GetUsers
             return new ResultDto<List<RolesDto>>()
             {
                 Data = roles,
-                IsSuccess = true,
-                Messege="",
+                isSuccess = true,
+                Message="متنی وارد نشده",
             };
 
         }

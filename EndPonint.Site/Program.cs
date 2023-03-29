@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("LocalConnection");
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+
 builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
 
 builder.Services.AddScoped<IGetUsersServices, GetUsersService>();
@@ -21,7 +21,7 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
     options.EnableDetailedErrors();
 });
-
+builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
