@@ -101,22 +101,22 @@ namespace Learn1.Application.Services.Users.Commands.RegesterUser
                     isSuccess=true,
                     Message="ثبت نام کاربر انجام شد",
                 };
-            } 
+            }
 
             catch (Exception)
             {
                 return new ResultDto<ResultRegesterUserDto>()
                 {
                     Data = new ResultRegesterUserDto()
-        {
-            UserId=0,
+                    {
+                        UserId=0,
                     },
                     isSuccess=false,
                     Message="ثبت نام کاربر انجام نشد"
 
                 };
 
-}
+            }
 
         }
 
