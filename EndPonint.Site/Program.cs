@@ -1,5 +1,6 @@
 using Learn1.Application.InterFaces.Context;
 using Learn1.Application.Services.Users.Commands.RegesterUser;
+using Learn1.Application.Services.Users.Commands.RemoveUser;
 using Learn1.Application.Services.Users.Queries.GetUsers;
 using Learn1.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
 builder.Services.AddScoped<IGetUsersServices, GetUsersService>();
 builder.Services.AddScoped<IGetRolesService, GetRolesService>();
 builder.Services.AddScoped<IRegesterUserService, RegesterUserServic>();
+builder.Services.AddScoped<IRemoveUserService, RemoveUserService>();
 
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
