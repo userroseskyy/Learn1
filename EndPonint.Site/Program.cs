@@ -1,4 +1,5 @@
 using Learn1.Application.InterFaces.Context;
+using Learn1.Application.Services.Users.Commands.EditeUser;
 using Learn1.Application.Services.Users.Commands.RegesterUser;
 using Learn1.Application.Services.Users.Commands.RemoveUser;
 using Learn1.Application.Services.Users.Commands.UserStatusChenge;
@@ -18,7 +19,7 @@ builder.Services.AddScoped<IGetRolesService, GetRolesService>();
 builder.Services.AddScoped<IRegesterUserService, RegesterUserServic>();
 builder.Services.AddScoped<IRemoveUserService, RemoveUserService>();
 builder.Services.AddScoped<IUserStatusChengeServic, UserStatusChengeServic>();
-
+builder.Services.AddScoped<IEditeUserService, EditeUserService>();
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
 {

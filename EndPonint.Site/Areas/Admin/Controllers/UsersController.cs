@@ -1,4 +1,5 @@
 ﻿using Learn1.Application.InterFaces.Context;
+using Learn1.Application.Services.Users.Commands.EditeUser;
 using Learn1.Application.Services.Users.Commands.RegesterUser;
 using Learn1.Application.Services.Users.Commands.RemoveUser;
 using Learn1.Application.Services.Users.Commands.UserStatusChenge;
@@ -16,17 +17,21 @@ namespace EndPonint.Site.Areas.Admin.Controllers
         private readonly IRegesterUserService _regesterUserService;
         private readonly IRemoveUserService _removeUserService;
         private readonly IUserStatusChengeServic _userStatusChengeService;
+        private readonly IEditeUserService _editeUserService;
+
 
 
         public UsersController(IGetUsersServices getUsersServices, IGetRolesService getRolesServices,
             IRegesterUserService regesterUserService,
-            IRemoveUserService removeUserService, IUserStatusChengeServic userStatusChengeService)
+            IRemoveUserService removeUserService, IUserStatusChengeServic userStatusChengeService,
+            IEditeUserService editeUserService)
         {
             _getUsersServices = getUsersServices;
             _getRolesServices= getRolesServices;
             _regesterUserService = regesterUserService;
             _removeUserService = removeUserService;
             _userStatusChengeService = userStatusChengeService;
+            _editeUserService = editeUserService;
         }
 
 
@@ -70,10 +75,20 @@ namespace EndPonint.Site.Areas.Admin.Controllers
         public IActionResult Delete(long UserId)
         {
             return Json(_removeUserService.Execute(UserId));
-        }[HttpPost]
+        }
+        [HttpPost]
         public IActionResult UserStatusChenge(long UserId)
         {
             return Json(_userStatusChengeService.Excute(UserId));
+        }
+        [HttpPost]
+        public IActionResult Edit(long UserId, string Fullname)
+        {
+            return Json(_editeUserService.Execute(new RequestEdituserDto
+            {
+                UserId = UserId,
+                Fullname=Fullname,
+            }));
         }
     }
 }

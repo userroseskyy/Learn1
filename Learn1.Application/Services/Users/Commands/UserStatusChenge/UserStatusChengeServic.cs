@@ -26,7 +26,7 @@ namespace Learn1.Application.Services.Users.Commands.UserStatusChenge
             return new ResultDto
             {
                 IsSuccess=true,
-                Message = $" کاربر با موفقیت{userstate}  ثبت شد",
+                Message = $" کاربر با موفقیت {userstate}    گردید",
             };
            
         }
