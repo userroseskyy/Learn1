@@ -1,6 +1,7 @@
 ﻿using Learn1.Application.InterFaces.Context;
 using Learn1.Application.Services.Users.Commands.RegesterUser;
 using Learn1.Application.Services.Users.Commands.RemoveUser;
+using Learn1.Application.Services.Users.Commands.UserStatusChenge;
 using Learn1.Application.Services.Users.Queries.GetUsers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,13 +15,18 @@ namespace EndPonint.Site.Areas.Admin.Controllers
         private readonly IGetRolesService _getRolesServices;
         private readonly IRegesterUserService _regesterUserService;
         private readonly IRemoveUserService _removeUserService;
+        private readonly IUserStatusChengeServic _userStatusChengeService;
 
-        public UsersController(IGetUsersServices getUsersServices, IGetRolesService getRolesServices, IRegesterUserService regesterUserService, IRemoveUserService removeUserService)
+
+        public UsersController(IGetUsersServices getUsersServices, IGetRolesService getRolesServices,
+            IRegesterUserService regesterUserService,
+            IRemoveUserService removeUserService, IUserStatusChengeServic userStatusChengeService)
         {
             _getUsersServices = getUsersServices;
             _getRolesServices= getRolesServices;
             _regesterUserService = regesterUserService;
             _removeUserService = removeUserService;
+            _userStatusChengeService = userStatusChengeService;
         }
 
 
@@ -64,6 +70,10 @@ namespace EndPonint.Site.Areas.Admin.Controllers
         public IActionResult Delete(long UserId)
         {
             return Json(_removeUserService.Execute(UserId));
+        }[HttpPost]
+        public IActionResult UserStatusChenge(long UserId)
+        {
+            return Json(_userStatusChengeService.Excute(UserId));
         }
     }
 }

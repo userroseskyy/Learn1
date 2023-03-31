@@ -25,6 +25,7 @@ namespace Learn1.Persistence.Context
             modelBuilder.Entity<Role>().HasData(new Role { Id=3, Name=nameof(UserRoles.Customer), });
 
             modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
+            modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsRemoved);
         }
 
 
