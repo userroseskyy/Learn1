@@ -2,7 +2,7 @@
 {
     public class RequestGetUserDto
     {
-        public string Searchkey{get; set;}
-           public  int Page {get; set;}
+        public string Searchkey { get; set; }
+        public int Page { get; set; }
     }
 }
