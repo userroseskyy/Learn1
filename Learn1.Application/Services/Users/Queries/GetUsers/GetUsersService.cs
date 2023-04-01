@@ -17,7 +17,7 @@ namespace Learn1.Application.Services.Users.Queries.GetUsers
             var users = _context.Users.AsQueryable();
             if (!string.IsNullOrWhiteSpace(request.Searchkey))
             {
-                users=users.Where(p => p.FullName.Contains(request.Searchkey)) /*&& p.Email.Contains(request.Searchkey))*/;
+                users=users.Where(p => p.FullName.Contains(request.Searchkey) || p.Email.Contains(request.Searchkey));
             }
             int rowsCount = 0;
             var usersList= users.ToPaged(request.Page, 20,out rowsCount).Select(p => new GetUsersDto
