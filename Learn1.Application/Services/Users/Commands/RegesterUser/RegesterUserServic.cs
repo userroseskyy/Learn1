@@ -1,6 +1,8 @@
 ﻿using Learn1.Application.InterFaces.Context;
+using Learn1.Common;
 using Learn1.Common.Dto;
 using Learn1.Domain.Entities;
+using System.Text.RegularExpressions;
 
 namespace Learn1.Application.Services.Users.Commands.RegesterUser
 {
@@ -67,6 +69,23 @@ namespace Learn1.Application.Services.Users.Commands.RegesterUser
                     };
 
                 }
+                string emailRegex = @"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}$";
+
+                var match = Regex.Match(request.Email, emailRegex, RegexOptions.IgnoreCase);
+                if (!match.Success)
+                {
+                    return new ResultDto<ResultRegesterUserDto>()
+                    {
+                        Data = new ResultRegesterUserDto()
+                        {
+                            UserId = 0,
+                        },
+                        isSuccess = false,
+                        Message = "ایمیل خودرا به درستی وارد نمایید"
+                    };
+                }
+                var passwordHasher = new PasswordHasher();
+                var hashedPassword = passwordHasher.HashPassword(request.Password);
 
 
 
@@ -74,7 +93,8 @@ namespace Learn1.Application.Services.Users.Commands.RegesterUser
                 {
                     Email=request.Email,
                     FullName=request.FullName,
-                    Password=request.Password,
+                    Password=hashedPassword,
+                    IsActive=true,
 
                 };
                 List<UserInRole> userInRoles = new List<UserInRole>();
@@ -119,6 +139,7 @@ namespace Learn1.Application.Services.Users.Commands.RegesterUser
             }
 
         }
+
 
     }
 }

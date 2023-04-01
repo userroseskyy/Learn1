@@ -5,12 +5,23 @@ using Learn1.Application.Services.Users.Commands.RemoveUser;
 using Learn1.Application.Services.Users.Commands.UserStatusChenge;
 using Learn1.Application.Services.Users.Queries.GetUsers;
 using Learn1.Persistence.Context;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("LocalConnection");
 // Add services to the container.
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+}).AddCookie(options =>
+{
+    options.LoginPath = new PathString("/");
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);
+});
 
 builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
 
@@ -43,6 +54,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllerRoute(
     name: "default",
