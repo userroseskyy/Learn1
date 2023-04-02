@@ -2,10 +2,12 @@ using Learn1.Application.InterFaces.Context;
 using Learn1.Application.Services.Users.Commands.EditeUser;
 using Learn1.Application.Services.Users.Commands.RegesterUser;
 using Learn1.Application.Services.Users.Commands.RemoveUser;
+using Learn1.Application.Services.Users.Commands.UserLogin;
 using Learn1.Application.Services.Users.Commands.UserStatusChenge;
 using Learn1.Application.Services.Users.Queries.GetUsers;
 using Learn1.Persistence.Context;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,7 +22,7 @@ builder.Services.AddAuthentication(options =>
 }).AddCookie(options =>
 {
     options.LoginPath = new PathString("/");
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(6.0);
 });
 
 builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
@@ -31,13 +33,18 @@ builder.Services.AddScoped<IRegesterUserService, RegesterUserServic>();
 builder.Services.AddScoped<IRemoveUserService, RemoveUserService>();
 builder.Services.AddScoped<IUserStatusChengeServic, UserStatusChengeServic>();
 builder.Services.AddScoped<IEditeUserService, EditeUserService>();
+builder.Services.AddScoped<IUserLoginService, UserLoginService>();
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
 {
     options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
     options.EnableDetailedErrors();
 });
+
+
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -53,8 +60,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

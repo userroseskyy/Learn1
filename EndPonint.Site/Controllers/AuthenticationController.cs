@@ -11,11 +11,11 @@ using System.Text.RegularExpressions;
 
 namespace EndPonint.Site.Controllers
 {
-    public class AuthenticationController1 : Controller
+    public class AuthenticationController : Controller
     {
         private IRegesterUserService _regesterUserService;
         private IUserLoginService  _userLoginService;
-        public AuthenticationController1(IRegesterUserService regesterUserService,IUserLoginService userLoginService)
+        public AuthenticationController(IRegesterUserService regesterUserService,IUserLoginService userLoginService)
         {
             _regesterUserService=regesterUserService;
             _userLoginService=userLoginService;
