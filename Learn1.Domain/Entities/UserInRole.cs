@@ -1,6 +1,8 @@
-﻿namespace Learn1.Domain.Entities
+﻿using Learn1.Domain.Entities.Commons;
+
+namespace Learn1.Domain.Entities
 {
-    public class UserInRole
+    public class UserInRole:BaseEntity
     {
         public long Id { get; set; }
       public virtual User User { get; set; }

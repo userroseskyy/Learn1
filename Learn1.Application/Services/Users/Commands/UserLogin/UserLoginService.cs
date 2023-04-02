@@ -46,7 +46,7 @@ namespace Learn1.Application.Services.Users.Commands.UserLogin
 
                 },
                 isSuccess = false,
-                Message = "کاربری با این ایمیل در سایت فروشگاه باگتو ثبت نام نکرده است",
+                Message = "کاربری با این ایمیل در سایت فروشگاه دزفول ثبت نام نکرده است",
             };
         }
 
