@@ -22,6 +22,40 @@ namespace Learn1.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Learn1.Domain.Entities.Products.Category", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("InsertTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("ParentCategoryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentCategoryId");
+
+                    b.ToTable("categories");
+                });
+
             modelBuilder.Entity("Learn1.Domain.Entities.Role", b =>
                 {
                     b.Property<long>("Id")
@@ -54,21 +88,21 @@ namespace Learn1.Persistence.Migrations
                         new
                         {
                             Id = 1L,
-                            InsertTime = new DateTime(2023, 4, 2, 13, 36, 24, 482, DateTimeKind.Local).AddTicks(5105),
+                            InsertTime = new DateTime(2023, 4, 2, 18, 3, 37, 609, DateTimeKind.Local).AddTicks(7570),
                             IsRemoved = false,
                             Name = "Admin"
                         },
                         new
                         {
                             Id = 2L,
-                            InsertTime = new DateTime(2023, 4, 2, 13, 36, 24, 482, DateTimeKind.Local).AddTicks(5155),
+                            InsertTime = new DateTime(2023, 4, 2, 18, 3, 37, 609, DateTimeKind.Local).AddTicks(7621),
                             IsRemoved = false,
                             Name = "Operator"
                         },
                         new
                         {
                             Id = 3L,
-                            InsertTime = new DateTime(2023, 4, 2, 13, 36, 24, 482, DateTimeKind.Local).AddTicks(5163),
+                            InsertTime = new DateTime(2023, 4, 2, 18, 3, 37, 609, DateTimeKind.Local).AddTicks(7630),
                             IsRemoved = false,
                             Name = "Customer"
                         });
@@ -152,6 +186,15 @@ namespace Learn1.Persistence.Migrations
                     b.ToTable("UserInRoles");
                 });
 
+            modelBuilder.Entity("Learn1.Domain.Entities.Products.Category", b =>
+                {
+                    b.HasOne("Learn1.Domain.Entities.Products.Category", "ParentCategory")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("ParentCategoryId");
+
+                    b.Navigation("ParentCategory");
+                });
+
             modelBuilder.Entity("Learn1.Domain.Entities.UserInRole", b =>
                 {
                     b.HasOne("Learn1.Domain.Entities.Role", "Role")
@@ -169,6 +212,11 @@ namespace Learn1.Persistence.Migrations
                     b.Navigation("Role");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Learn1.Domain.Entities.Products.Category", b =>
+                {
+                    b.Navigation("SubCategories");
                 });
 
             modelBuilder.Entity("Learn1.Domain.Entities.Role", b =>

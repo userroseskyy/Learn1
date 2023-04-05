@@ -1,4 +1,5 @@
 ﻿using Learn1.Domain.Entities;
+using Learn1.Domain.Entities.Products;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace Learn1.Application.InterFaces.Context
          DbSet<User> Users { get; set; }
         DbSet<Role> Roles { get; set; }
          DbSet<UserInRole> UserInRoles { get; set; }
+        DbSet<Category> categories { get; set; }
 
 
 
