@@ -1,4 +1,5 @@
 ﻿@using Learn1.Application.Services.Products.Queries.GetCategories
+@model List<CategoriesDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AminLayout.cshtml";
@@ -34,9 +35,11 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                
 
                                                 @foreach (var item in Model)
                                                 {
+                                                    
                                                     <tr role="row" class="odd">
                                                         <td class="sorting_1">@item.Name</td>
                                                         <td>
@@ -46,7 +49,9 @@
 
                                                             <text> @parent </text>
                                                         </td>
+
                                                         <td>
+                                                            
                                                             @if (item.Parent == null)
                                                             {
                                                                 <a href="~/admin/categories/AddNewCategory?ParentId=@item.Id" class="btn btn-success">افزودن فرزند</a>
@@ -55,8 +60,9 @@
                                                             @if (item.HasChild == true)
                                                             {
                                                                 <a href="~/admin/categories/index?ParentId=@item.Id" class="btn btn-info">مشاهده لیست فرزند ها </a>
+                                                                
                                                             }
-
+                                                            <button class="btn btn-danger " onclick="DeleteUser('@item.Id')">حذف</button>
                                                         </td>
                                                     </tr>
                                                 }
@@ -73,7 +79,69 @@
     </div>
 </div>
 @section Scripts
-    {}
+    {
+    <script src="~/sweetalert2/sweetalert2.min.js"></script>
+    <link href="~/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+}
+<script>
+    function DeleteUser(Id) {
+        swal.fire({
+            title: 'حذف دسته بندی',
+            text: "کاربر گرامی از حذف دسته بندی مطمئن هستید؟",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#7cacbe',
+            confirmButtonText: 'بله ، دسته بندی حذف شود',
+            cancelButtonText: 'خیر'
+        }).then((result) => {
+            if (result.value) {
+
+            
+                var parentId = $("#Id").val();
+
+
+                var postData = {
+                   
+                    'Id': Id,
+                };
+
+                $.ajax({
+                    contentType: 'application/x-www-form-urlencoded',
+                    dataType: 'json',
+                    type: "POST",
+                    url: "Delete",
+                    data: postData,
+                    success: function (data) {
+                        if (data.isSuccess == true) {
+                            swal.fire(
+                                'موفق!',
+                                data.message,
+                                'success'
+                            ).then(function (isConfirm) {
+                                location.reload();
+                            });
+                        }
+                        else {
+
+                            swal.fire(
+                                'هشدار!',
+                                data.message,
+                                'warning'
+                            );
+
+                        }
+                    },
+                    error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+
+                });
+
+            }
+        })
+    }
+</script>
 @section Modals
     {
 }

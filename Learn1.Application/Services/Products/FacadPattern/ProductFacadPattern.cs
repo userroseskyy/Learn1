@@ -2,6 +2,7 @@
 using Learn1.Application.InterFaces.FacadPatterns;
 using Learn1.Application.Services.Products.Commands.AddNewCategory;
 using Learn1.Application.Services.Products.Queries.GetCategories;
+using Learn1.Application.Services.Products.Queries.RemoveCategory;
 
 namespace Learn1.Application.Services.Products.FacadPattern
 {
@@ -31,6 +32,15 @@ namespace Learn1.Application.Services.Products.FacadPattern
                 return _getCategoriesService = _getCategoriesService ?? new GetCategoriesService(_context);
             }
         }
+        private IRemoveCategory _removeCategory;
+        public IRemoveCategory RemoveCategory 
+        {get
+            {
+                return _removeCategory=_removeCategory ?? new RemoveCategory(_context);
+            }
+        }
 
+
+        
     }
 }
