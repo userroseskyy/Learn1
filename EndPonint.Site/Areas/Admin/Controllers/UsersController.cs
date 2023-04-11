@@ -84,10 +84,10 @@ namespace EndPonint.Site.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(long UserId, string Fullname)
         {
-            return Json(_editeUserService.Execute(new RequestEdituserDto
+            return Json( _editeUserService.Execute(new RequestEdituserDto
             {
+                Fullname = Fullname,
                 UserId = UserId,
-                Fullname=Fullname,
             }));
         }
     }
