@@ -1,4 +1,5 @@
 ﻿using Learn1.Application.InterFaces.FacadPatterns;
+using Learn1.Application.Services.Users.Commands.EditeUser;
 using Learn1.Application.Services.Users.Commands.RemoveUser;
 using Learn1.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -39,6 +40,15 @@ namespace EndPonint.Site.Areas.Admin.Controllers
         {
             var result = _productFacad.RemoveCategory.Execute(Id);
             return Json(result);
+        } 
+        [HttpPost]
+        public IActionResult Edit(long UserId, string Fullname)
+        {
+            return Json(_productFacad.EditeCategoryService.Execute(new RequestEdituserDto
+            {
+                Fullname = Fullname,
+                UserId = UserId,
+            }));
         }
 
     }

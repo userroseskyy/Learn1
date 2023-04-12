@@ -77,8 +77,9 @@ namespace EndPonint.Site.Areas.Admin.Controllers
             return Json(_removeUserService.Execute(UserId));
         }
         [HttpPost]
-        public IActionResult UserStatusChenge(long UserId)
+        public IActionResult UserStatusChange(long UserId)
         {
+            
             return Json(_userStatusChengeService.Excute(UserId));
         }
         [HttpPost]

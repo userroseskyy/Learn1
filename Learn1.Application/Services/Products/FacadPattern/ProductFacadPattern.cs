@@ -1,6 +1,7 @@
 ﻿using Learn1.Application.InterFaces.Context;
 using Learn1.Application.InterFaces.FacadPatterns;
 using Learn1.Application.Services.Products.Commands.AddNewCategory;
+using Learn1.Application.Services.Products.Queries.Editcategory;
 using Learn1.Application.Services.Products.Queries.GetCategories;
 using Learn1.Application.Services.Products.Queries.RemoveCategory;
 
@@ -39,8 +40,13 @@ namespace Learn1.Application.Services.Products.FacadPattern
                 return _removeCategory=_removeCategory ?? new RemoveCategory(_context);
             }
         }
-
-
-        
+        private IEditeCategoryService _editcategoryService;
+        public IEditeCategoryService EditeCategoryService
+        {
+            get
+            {
+                return _editcategoryService=_editcategoryService?? new EditeCategoryService(_context);
+            }
+        }
     }
 }

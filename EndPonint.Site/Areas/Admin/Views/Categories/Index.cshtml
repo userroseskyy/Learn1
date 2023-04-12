@@ -143,15 +143,13 @@
         })
     }
     function Edituser() {
+ var userId = $("#Edit_UserId").val();
+            var fullName = $("#Edit_Fullname").val();
 
-        var userId = $("#Edit_UserId").val();
-        var fullName = $("#Edit_Fullname").val();
-
-        var postData = {
-            'UserId': userId,
-            'FullName': fullName,
-        };
-
+            var postData = {
+                'UserId': userId,
+                'FullName': fullName,
+            };
 
         $.ajax({
             contentType: 'application/x-www-form-urlencoded',
@@ -202,7 +200,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">ویرایش کاربر</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">ویرایش دسته بندی</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -211,7 +209,7 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
                         <fieldset class="form-group">
                             <input type="hidden" id="Edit_UserId" />
-                            <label for="basicInput">نام و نام خانوادگی</label>
+                            <label for="basicInput">نام دسته بندی</label>
                             <input type="text" class="form-control" id="Edit_Fullname">
                         </fieldset>
                     </div>

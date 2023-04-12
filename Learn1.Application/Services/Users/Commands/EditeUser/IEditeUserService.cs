@@ -9,6 +9,7 @@ namespace Learn1.Application.Services.Users.Commands.EditeUser
 {
     public interface IEditeUserService
     {
-        public ResultDto Execute(RequestEdituserDto request);
+        ResultDto Execute(RequestEdituserDto request);
     }
+  
 }
