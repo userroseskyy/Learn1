@@ -1,22 +1,26 @@
 ﻿using Learn1.Application.InterFaces.Context;
 using Learn1.Application.InterFaces.FacadPatterns;
 using Learn1.Application.Services.Products.Commands.AddNewCategory;
+using Learn1.Application.Services.Products.Commands.AddNewProduct;
 using Learn1.Application.Services.Products.Queries.Editcategory;
 using Learn1.Application.Services.Products.Queries.GetCategories;
 using Learn1.Application.Services.Products.Queries.RemoveCategory;
+
 
 namespace Learn1.Application.Services.Products.FacadPattern
 {
     public class ProductFacad : IProductFacad
     {
         private readonly IDatabaseContext _context;
+
         public ProductFacad(IDatabaseContext context)
         {
             _context = context;
+
         }
 
         private AddNewCategoryServise _addNewCategory;
-       
+
 
         public AddNewCategoryServise AddNewCategoryServise
         {
@@ -34,8 +38,9 @@ namespace Learn1.Application.Services.Products.FacadPattern
             }
         }
         private IRemoveCategory _removeCategory;
-        public IRemoveCategory RemoveCategory 
-        {get
+        public IRemoveCategory RemoveCategory
+        {
+            get
             {
                 return _removeCategory=_removeCategory ?? new RemoveCategory(_context);
             }
@@ -48,5 +53,7 @@ namespace Learn1.Application.Services.Products.FacadPattern
                 return _editcategoryService=_editcategoryService?? new EditeCategoryService(_context);
             }
         }
+
+        public IAddNewProductService addNewProductService => throw new NotImplementedException();
     }
 }

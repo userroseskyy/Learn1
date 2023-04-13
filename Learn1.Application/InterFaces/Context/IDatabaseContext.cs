@@ -15,6 +15,9 @@ namespace Learn1.Application.InterFaces.Context
         DbSet<Role> Roles { get; set; }
          DbSet<UserInRole> UserInRoles { get; set; }
         DbSet<Category> categories { get; set; }
+        DbSet<Product> Products { get; set; }
+        DbSet<ProductImages> ProductImages { get; set; }
+        DbSet<ProductFeatures> ProductFeatures { get; set; }
 
 
 

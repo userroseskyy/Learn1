@@ -16,6 +16,9 @@ namespace Learn1.Persistence.Context
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserInRole> UserInRoles { get; set; }
         public DbSet<Category> categories { get; set; }
+       public DbSet<Product> Products { get; set; }
+       public DbSet<ProductImages> ProductImages { get; set; }
+       public DbSet<ProductFeatures> ProductFeatures { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
