@@ -1,6 +1,9 @@
 ﻿using Learn1.Application.InterFaces.Context;
 using Learn1.Common.Dto;
 using Learn1.Domain.Entities.Products;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+
 
 namespace Learn1.Application.Services.Products.Commands.AddNewProduct
 {
@@ -13,9 +16,9 @@ namespace Learn1.Application.Services.Products.Commands.AddNewProduct
     public class AddNewProductService : IAddNewProductService
     {
         private readonly IDatabaseContext _context;
-        private readonly IWebHostEnvironment  _environment;
+        private readonly IHostingEnvironment  _environment; 
 
-        public AddNewProductService(IDatabaseContext context)
+        public AddNewProductService(IDatabaseContext context, IHostingEnvironment hostingEnvironment)
         {
             _context = context;
 

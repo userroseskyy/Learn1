@@ -1,19 +1,14 @@
 ﻿using Learn1.Domain.Entities;
 using Learn1.Domain.Entities.Products;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Learn1.Application.InterFaces.Context
 {
-   public interface IDatabaseContext
+    public interface IDatabaseContext
     {
-         DbSet<User> Users { get; set; }
+        DbSet<User> Users { get; set; }
         DbSet<Role> Roles { get; set; }
-         DbSet<UserInRole> UserInRoles { get; set; }
+        DbSet<UserInRole> UserInRoles { get; set; }
         DbSet<Category> categories { get; set; }
         DbSet<Product> Products { get; set; }
         DbSet<ProductImages> ProductImages { get; set; }

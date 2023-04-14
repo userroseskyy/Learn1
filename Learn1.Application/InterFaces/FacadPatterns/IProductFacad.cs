@@ -1,6 +1,7 @@
 ﻿using Learn1.Application.Services.Products.Commands.AddNewCategory;
 using Learn1.Application.Services.Products.Commands.AddNewProduct;
 using Learn1.Application.Services.Products.Queries.Editcategory;
+using Learn1.Application.Services.Products.Queries.GetAllCategory;
 using Learn1.Application.Services.Products.Queries.GetCategories;
 using Learn1.Application.Services.Products.Queries.RemoveCategory;
 
@@ -12,6 +13,7 @@ namespace Learn1.Application.InterFaces.FacadPatterns
         IGetCategoriesService GetCategoriesService { get; }
         IRemoveCategory RemoveCategory { get; }
         IEditeCategoryService EditeCategoryService { get; }
-        IAddNewProductService addNewProductService { get; }
+        AddNewProductService AddNewProductService { get; }
+        IGetAllCategoriesService GetAllCategoriesService { get; }
     }
 }

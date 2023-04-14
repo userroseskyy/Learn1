@@ -41,6 +41,9 @@ namespace Learn1.Persistence.Context
             modelBuilder.Entity<Role>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<UserInRole>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<Category>().HasQueryFilter(p => !p.IsRemoved);
+            modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsRemoved);
+            modelBuilder.Entity<ProductImages>().HasQueryFilter(p => !p.IsRemoved);
+            modelBuilder.Entity<ProductFeatures>().HasQueryFilter(p => !p.IsRemoved);
 
         }
 
