@@ -21,6 +21,7 @@ namespace Learn1.Application.Services.Products.Commands.AddNewProduct
         public AddNewProductService(IDatabaseContext context, IHostingEnvironment hostingEnvironment)
         {
             _context = context;
+            _environment = hostingEnvironment;
 
         }
 
