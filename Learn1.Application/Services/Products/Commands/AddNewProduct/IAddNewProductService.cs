@@ -146,6 +146,8 @@ namespace Learn1.Application.Services.Products.Commands.AddNewProduct
         public int Inventory { get; set; }
         public long CategoryId { get; set; }
         public bool Displayed { get; set; }
+        public string DisplayName { get; set; }
+        public string Value { get; set; }
 
         public List<IFormFile> Images { get; set; }
         public List<AddNewProduct_Features> Features { get; set; }
