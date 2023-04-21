@@ -31,6 +31,7 @@ namespace EndPonint.Site.Areas.Admin.Controllers
         public IActionResult AddNewProduct(RequestAddNewProductDto request, List<AddNewProduct_Features> Features)
         {
             List<IFormFile> images = new List<IFormFile>();
+            
             for (int i = 0; i < Request.Form.Files.Count; i++)
             {
                 var file = Request.Form.Files[i];

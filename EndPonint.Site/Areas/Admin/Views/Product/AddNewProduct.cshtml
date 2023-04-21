@@ -7,7 +7,7 @@
 <section class="basic-elements">
     <div class="row">
         <div class="col-sm-12">
-            <h2 class="content-header">فرم ثبت نام کاربر جدید</h2>
+            <h2 class="content-header">فرم ثبت نام محصول جدید</h2>
         </div>
     </div>
     <div class="row">
@@ -57,6 +57,7 @@
                                         <fieldset class="form-group">
                                             <label for="basicInput">تصاویر </label>
                                             <input type="file" multiple class="form-control" accept="image/*" id="Images">
+                                          
                                         </fieldset>
                                     </div>
 
@@ -191,9 +192,10 @@
             data.append("Displayed", $("#Displayed").attr("checked") ? true : false);
             data.append("CategoryId", $('#Category').find('option:selected').val());
             data.append("Description", $("#Description").val());
-
+           
 
             //دریافت عکس های انتخاب شده توسط کاربر و قرار دادن عکس ها در متغیر data
+          
             var productImages = document.getElementById("Images");
 
             if (productImages.files.length > 0) {
