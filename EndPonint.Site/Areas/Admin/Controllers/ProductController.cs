@@ -16,9 +16,9 @@ namespace EndPonint.Site.Areas.Admin.Controllers
         {
             _ProductFacad = ProductFacad;
         }
-        public IActionResult Index()
+        public IActionResult Index(int Page,int PageSize=20)
         {
-            return View();
+            return View(_ProductFacad.GetProductForAdminService.Execute(Page, PageSize).Data);
         }
         [HttpGet]
        
