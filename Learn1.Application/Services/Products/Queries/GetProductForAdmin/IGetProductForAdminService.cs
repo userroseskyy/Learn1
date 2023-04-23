@@ -45,7 +45,7 @@ namespace Learn1.Application.Services.Products.Queries.GetProductForAdmin
                 Data =new ProductForAdminDto()
                 {
                     Products = products,
-                    CurentPage= Page+1,
+                    CurentPage= Page,
                     PageSize= PageSize,
                     RowCount= rowCount
                 },
