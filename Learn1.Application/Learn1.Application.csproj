@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Learn1.Domain\Learn1.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\Products\Queries\GetProductDetailForAdmin\" />
-  </ItemGroup>
-
 </Project>

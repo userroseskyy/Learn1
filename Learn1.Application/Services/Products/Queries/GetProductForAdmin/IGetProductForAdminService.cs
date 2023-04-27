@@ -46,7 +46,7 @@ namespace Learn1.Application.Services.Products.Queries.GetProductForAdmin
                 {
                     Products = products,
                     CurentPage= Page,
-                    PageSize= PageSize,
+                    PageSize= PageSize/3,
                     RowCount= rowCount
                 },
                 isSuccess=true,
