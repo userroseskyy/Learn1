@@ -21,6 +21,11 @@ namespace EndPonint.Site.Areas.Admin.Controllers
           
             return View(_ProductFacad.GetProductForAdminService.Execute(Page, PageSize).Data);
         }
+
+        public IActionResult Details(long Id)
+        {
+            return View(_ProductFacad.GetProductDetailForAdminService.Execute(Id).Data);
+        }
         [HttpGet]
        
         public IActionResult AddNewProduct()
