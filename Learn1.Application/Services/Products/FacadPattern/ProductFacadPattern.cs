@@ -7,6 +7,7 @@ using Learn1.Application.Services.Products.Queries.GetAllCategory;
 using Learn1.Application.Services.Products.Queries.GetCategories;
 using Learn1.Application.Services.Products.Queries.GetProductDetailForAdmin;
 using Learn1.Application.Services.Products.Queries.GetProductForAdmin;
+using Learn1.Application.Services.Products.Queries.GetProductForSite;
 using Learn1.Application.Services.Products.Queries.RemoveCategory;
 using Microsoft.AspNetCore.Hosting;
 
@@ -90,7 +91,15 @@ namespace Learn1.Application.Services.Products.FacadPattern
             {
                 return _getProductDetailForAdminService = _getProductDetailForAdminService ?? new GetProductDetailForAdminService(_context);
             }
+        } private IGetProductForSiteService  _getProductForSiteService;
+        public IGetProductForSiteService GetProductForSiteService
+        {
+            get
+            {
+                return _getProductForSiteService = _getProductForSiteService ?? new GetProductForSiteService(_context);
+            }
         }
 
+       
     }
 }
