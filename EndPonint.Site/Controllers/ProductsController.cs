@@ -13,6 +13,11 @@ namespace EndPonint.Site.Controllers
         public IActionResult Index(int Page=1)
         {
             return View(_productFacad.GetProductForSiteService.Execute(Page).Data);
+        } public IActionResult Detail(long Id)
+        
+        {
+            return View(_productFacad.GetProductDetailForSiteService.Execute(Id).Data);
         }
+        
     }
 }

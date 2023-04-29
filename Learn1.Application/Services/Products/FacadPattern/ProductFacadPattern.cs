@@ -6,6 +6,7 @@ using Learn1.Application.Services.Products.Queries.Editcategory;
 using Learn1.Application.Services.Products.Queries.GetAllCategory;
 using Learn1.Application.Services.Products.Queries.GetCategories;
 using Learn1.Application.Services.Products.Queries.GetProductDetailForAdmin;
+using Learn1.Application.Services.Products.Queries.GetProductDetailForSite;
 using Learn1.Application.Services.Products.Queries.GetProductForAdmin;
 using Learn1.Application.Services.Products.Queries.GetProductForSite;
 using Learn1.Application.Services.Products.Queries.RemoveCategory;
@@ -91,12 +92,21 @@ namespace Learn1.Application.Services.Products.FacadPattern
             {
                 return _getProductDetailForAdminService = _getProductDetailForAdminService ?? new GetProductDetailForAdminService(_context);
             }
-        } private IGetProductForSiteService  _getProductForSiteService;
+        } 
+        private IGetProductForSiteService  _getProductForSiteService;
         public IGetProductForSiteService GetProductForSiteService
         {
             get
             {
                 return _getProductForSiteService = _getProductForSiteService ?? new GetProductForSiteService(_context);
+            }
+        }
+        private IGetProductDetailForSiteService _getProductDetailForSiteService;
+        public IGetProductDetailForSiteService  GetProductDetailForSiteService
+        {
+            get
+            {
+                return _getProductDetailForSiteService = _getProductDetailForSiteService ?? new GetProductDetailForSiteService(_context);
             }
         }
 
