@@ -211,21 +211,21 @@ namespace Learn1.Persistence.Migrations
                         new
                         {
                             Id = 1L,
-                            InsertTime = new DateTime(2023, 4, 15, 15, 1, 40, 546, DateTimeKind.Local).AddTicks(988),
+                            InsertTime = new DateTime(2023, 5, 3, 1, 21, 5, 443, DateTimeKind.Local).AddTicks(698),
                             IsRemoved = false,
                             Name = "Admin"
                         },
                         new
                         {
                             Id = 2L,
-                            InsertTime = new DateTime(2023, 4, 15, 15, 1, 40, 546, DateTimeKind.Local).AddTicks(1038),
+                            InsertTime = new DateTime(2023, 5, 3, 1, 21, 5, 443, DateTimeKind.Local).AddTicks(751),
                             IsRemoved = false,
                             Name = "Operator"
                         },
                         new
                         {
                             Id = 3L,
-                            InsertTime = new DateTime(2023, 4, 15, 15, 1, 40, 546, DateTimeKind.Local).AddTicks(1047),
+                            InsertTime = new DateTime(2023, 5, 3, 1, 21, 5, 443, DateTimeKind.Local).AddTicks(761),
                             IsRemoved = false,
                             Name = "Customer"
                         });
