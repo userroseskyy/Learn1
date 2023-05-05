@@ -11,7 +11,7 @@ namespace Learn1.Application.Services.Common.Queries.GetMenuItem
 {
     public interface IGetMenuItemService
     {
-        ResultDto<MenuItemDto> Execute();
+        ResultDto<List<MenuItemDto>> Execute();
     }
     public class GetMenuItemService : IGetMenuItemService
     {
@@ -20,10 +20,11 @@ namespace Learn1.Application.Services.Common.Queries.GetMenuItem
         {
             _context=context;
         }
-        public ResultDto<MenuItemDto> Execute()
+        public ResultDto<List<MenuItemDto>> Execute()
         {
             var category = _context.categories
                  .Include(p => p.SubCategories)
+                   .Where(p => p.ParentCategoryId == null)
                  .ToList()
                  .Select(p => new MenuItemDto
                  {
@@ -35,7 +36,7 @@ namespace Learn1.Application.Services.Common.Queries.GetMenuItem
                          Name= child.Name,
 
                      }).ToList(),
-                 });
+                 }).ToList();
             return new ResultDto<List<MenuItemDto>>()
             {
                 Data= category,
