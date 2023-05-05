@@ -10,7 +10,7 @@ namespace EndPonint.Site.Controllers
         {
             _productFacad = productFacad;
         }
-        public IActionResult Index(int Page=1)
+        public IActionResult Index(long? CatId=null, int Page=1)
         {
             return View(_productFacad.GetProductForSiteService.Execute(Page).Data);
         } public IActionResult Detail(long Id)
