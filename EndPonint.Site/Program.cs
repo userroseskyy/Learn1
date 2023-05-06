@@ -1,5 +1,6 @@
 using Learn1.Application.InterFaces.Context;
 using Learn1.Application.InterFaces.FacadPatterns;
+using Learn1.Application.Services.Common.Queries.GetMenuItem;
 using Learn1.Application.Services.Products.FacadPattern;
 using Learn1.Application.Services.Users.Commands.EditeUser;
 using Learn1.Application.Services.Users.Commands.RegesterUser;
@@ -38,6 +39,9 @@ builder.Services.AddScoped<IEditeUserService, EditeUserService>();
 builder.Services.AddScoped<IUserLoginService, UserLoginService>();
 //FacadeInject
 builder.Services.AddScoped<IProductFacad, ProductFacad>();
+
+//-------------------------------
+builder.Services.AddScoped<IGetMenuItemService, GetMenuItemService>();
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
 {

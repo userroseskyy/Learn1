@@ -9,6 +9,6 @@ namespace Learn1.Application.Services.Products.Queries.GetProductForSite
 {
     public interface IGetProductForSiteService
     {
-        ResultDto<ResultProductForSiteDto> Execute(int Page);
+        ResultDto<ResultProductForSiteDto> Execute(int Page, long? CatId);
     }
 }

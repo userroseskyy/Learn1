@@ -1,5 +1,4 @@
 ﻿using Learn1.Application.InterFaces.Context;
-using Learn1.Application.Services.Common.Queries.GetCategories;
 using Learn1.Common.Dto;
 using Microsoft.EntityFrameworkCore;
 

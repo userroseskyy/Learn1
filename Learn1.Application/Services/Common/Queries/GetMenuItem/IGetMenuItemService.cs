@@ -1,5 +1,6 @@
 ﻿using Learn1.Application.InterFaces.Context;
 using Learn1.Common.Dto;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,37 @@ namespace Learn1.Application.Services.Common.Queries.GetMenuItem
 {
     public interface IGetMenuItemService
     {
-        ResultDto<MenuItemDto> Execute();
+        ResultDto<List<MenuItemDto>> Execute();
     }
     public class GetMenuItemService : IGetMenuItemService
     {
-        private readonly IDatabaseContext 
-        public ResultDto<MenuItemDto> Execute()
+        private readonly IDatabaseContext _context;
+        public GetMenuItemService(IDatabaseContext context)
         {
-            throw new NotImplementedException();
+            _context=context;
+        }
+        public ResultDto<List<MenuItemDto>> Execute()
+        {
+            var category = _context.categories
+                 .Include(p => p.SubCategories)
+                   .Where(p => p.ParentCategoryId == null)
+                 .ToList()
+                 .Select(p => new MenuItemDto
+                 {
+                     CatId=p.Id,
+                     Name=p.Name,
+                     Child=p.SubCategories.ToList().Select(child => new MenuItemDto
+                     {
+                        CatId=child.Id,
+                         Name= child.Name,
+
+                     }).ToList(),
+                 }).ToList();
+            return new ResultDto<List<MenuItemDto>>()
+            {
+                Data= category,
+                isSuccess=true,
+            };
         }
     }
     public class MenuItemDto
@@ -27,4 +51,5 @@ namespace Learn1.Application.Services.Common.Queries.GetMenuItem
         public List<MenuItemDto> Child { get; set; }
 
     }
+    
 }
